@@ -9,14 +9,15 @@ import org.hibernate.validator.spi.messageinterpolation.LocaleResolverContext;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
+
 @ApplicationScoped
 public class CustomLocaleResolver implements LocaleResolver {
 	
-	@ConfigProperty(name = "quarkus.default-locale") 
-	String defaultLocale;
+//	@ConfigProperty(name = "quarkus.default-locale") 
+//	String defaultLocale;
 
 	@Override
 	public Locale resolve(LocaleResolverContext context) {
-		return new Locale(defaultLocale);
+		return LocaleFilter.THREAD_LOCAL_LOCALE.get();
 	}
 }

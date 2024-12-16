@@ -1,0 +1,42 @@
+2024-12-06 16:02:24 ERROR [io.quarkus.runtime.Application] (Quarkus Main Thread) Failed to start application: java.lang.RuntimeException: Failed to start quarkus
+	at io.quarkus.runner.ApplicationImpl.doStart(Unknown Source)
+	at io.quarkus.runtime.Application.start(Application.java:101)
+	at io.quarkus.runtime.ApplicationLifecycleManager.run(ApplicationLifecycleManager.java:121)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:71)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:44)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:124)
+	at io.quarkus.runner.GeneratedMain.main(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.quarkus.runner.bootstrap.StartupActionImpl$1.run(StartupActionImpl.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.Error: Unresolved compilation problems: 
+	JBoss7GelfLogHandler cannot be resolved to a type
+	JBoss7GelfLogHandler cannot be resolved to a type
+
+	at org.acme.opentelemetry.config.LoggingConfiguration.setup(LoggingConfiguration.java:45)
+	at org.acme.opentelemetry.config.LoggingConfiguration_Bean.doCreate(Unknown Source)
+	at org.acme.opentelemetry.config.LoggingConfiguration_Bean.create(Unknown Source)
+	at org.acme.opentelemetry.config.LoggingConfiguration_Bean.create(Unknown Source)
+	at io.quarkus.arc.impl.AbstractSharedContext.createInstanceHandle(AbstractSharedContext.java:119)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:38)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:35)
+	at io.quarkus.arc.generator.Default_jakarta_enterprise_context_ApplicationScoped_ContextInstances.c9(Unknown Source)
+	at io.quarkus.arc.generator.Default_jakarta_enterprise_context_ApplicationScoped_ContextInstances.computeIfAbsent(Unknown Source)
+	at io.quarkus.arc.impl.AbstractSharedContext.get(AbstractSharedContext.java:35)
+	at io.quarkus.arc.impl.ClientProxies.getApplicationScopedDelegate(ClientProxies.java:21)
+	at org.acme.opentelemetry.config.LoggingConfiguration_ClientProxy.arc$delegate(Unknown Source)
+	at org.acme.opentelemetry.config.LoggingConfiguration_ClientProxy.arc_contextualInstance(Unknown Source)
+	at org.acme.opentelemetry.config.LoggingConfiguration_Observer_Synthetic_UWIrvYil7o77REDS76fnML2Sz1Q.notify(Unknown Source)
+	at io.quarkus.arc.impl.EventImpl$Notifier.notifyObservers(EventImpl.java:351)
+	at io.quarkus.arc.impl.EventImpl$Notifier.notify(EventImpl.java:333)
+	at io.quarkus.arc.impl.EventImpl.fire(EventImpl.java:80)
+	at io.quarkus.arc.runtime.ArcRecorder.fireLifecycleEvent(ArcRecorder.java:163)
+	at io.quarkus.arc.runtime.ArcRecorder.handleLifecycleEvents(ArcRecorder.java:114)
+	at io.quarkus.deployment.steps.LifecycleEventsBuildStep$startupEvent1144526294.deploy_0(Unknown Source)
+	at io.quarkus.deployment.steps.LifecycleEventsBuildStep$startupEvent1144526294.deploy(Unknown Source)
+	... 13 more
+
+2024-12-06 16:02:24 INFO  [io.quarkus.deployment.dev.IsolatedDevModeMain] (main) Attempting to start live reload endpoint to recover from previous Quarkus startup failure
